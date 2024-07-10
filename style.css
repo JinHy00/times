@@ -1,0 +1,117 @@
+.head-line {
+  display: flex;
+  justify-content: center;
+  font-size: 100px;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+}
+.search-area {
+  display: flex;
+  justify-content: center;
+}
+.menu-area {
+  margin-top: 1em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid rgb(84, 84, 163);
+  border-bottom: 4px double rgb(84, 84, 163);
+}
+
+.menu-area button {
+  border: none;
+  background: none;
+  margin: 5px;
+}
+
+.menu-area button:hover {
+  background-color: rgb(221, 221, 221);
+  border-radius: 4px;
+}
+.news-img-size {
+  max-width: 100%;
+  max-height: 450px;
+}
+.news {
+  border-bottom: 2px solid rgb(84, 84, 163);
+}
+.top-menu {
+  display: flex;
+}
+.side-bar {
+  display: none;
+  border: none;
+  background: none;
+  color: rgb(84, 84, 163);
+  font-size: 30px;
+}
+
+.searchTool {
+  color: rgb(84, 84, 163);
+  font-size: 27px;
+  background: none;
+  border: none;
+  position: absolute;
+  right: 20px;
+}
+.userSearch {
+  display: none;
+  padding: 0;
+  position: absolute;
+  right: 60px;
+  top: 5px;
+  width: 100px;
+}
+
+.side-menu {
+  display: none;
+  box-sizing: border-box;
+  width: 30%;
+  border: 2px solid rgb(200, 239, 255);
+  background-color: rgb(200, 239, 255);
+}
+
+@media screen and (max-width: 768px) {
+  .menu-area {
+    display: none;
+    flex-direction: column;
+  }
+  .side-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+  .side-menu button {
+    width: 100%;
+    text-align: center;
+    border: none;
+    background: none;
+
+    padding: 4px 10px;
+    justify-content: space-around;
+  }
+  .side-menu button:hover {
+    background-color: rgb(238, 238, 238);
+    border: 1px solid rgb(238, 238, 238);
+
+    border-radius: 4px;
+  }
+  .side-bar {
+    display: block;
+  }
+  .side-menu.active {
+    display: flex;
+    position: absolute;
+    box-sizing: border-box;
+    width: 40%;
+    height: 500px;
+    padding: 0;
+  }
+  .searchTool {
+    color: rgb(84, 84, 163);
+    font-size: 27px;
+    background: none;
+    border: none;
+    position: absolute;
+    right: 10px;
+  }
+}
