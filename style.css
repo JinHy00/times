@@ -1,117 +1,154 @@
+body {
+  background-color: #f5f4f4;
+}
+.container {
+  background-color: rgb(250, 245, 239);
+  box-shadow: rgba(0, 0, 0, 0.05) 0px 1px 2px 0px;
+}
+/* 헤더*/
+header {
+  display: flex;
+  margin-top: 1em;
+  line-height: 2em;
+}
+menu {
+  padding-left: 0;
+  margin: 0;
+  display: none;
+}
+menu i {
+  font-size: 1.5em;
+  cursor: pointer;
+  margin-right: 5px;
+}
+.fa-x {
+  display: none;
+}
+
+.search {
+  display: flex;
+  cursor: pointer;
+}
+.fa-magnifying-glass {
+  margin-right: 10px;
+  font-size: 1.5em;
+}
+.input-area {
+  display: flex;
+  width: 0;
+  transition: 0.5s;
+  overflow: hidden;
+  opacity: 0;
+}
+input[type="text"] {
+  border: none;
+  background: transparent;
+  padding: 0 10px;
+  border: 1px solid #999;
+}
+.input-area button {
+  border: none;
+  background-color: #444;
+  color: #fff;
+}
+.input-area button:hover {
+  background-color: #333;
+}
+input[type="text"]:focus {
+  outline: none;
+  background-color: transparent;
+}
+
+/* 타이틀, 메뉴*/
 .head-line {
-  display: flex;
-  justify-content: center;
-  font-size: 100px;
-  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
-}
-.search-area {
-  display: flex;
-  justify-content: center;
-}
-.menu-area {
   margin-top: 1em;
   display: flex;
   justify-content: center;
-  flex-wrap: wrap;
-  border-top: 1px solid rgb(84, 84, 163);
-  border-bottom: 4px double rgb(84, 84, 163);
 }
 
-.menu-area button {
+.head-line svg {
+  width: 430px;
+}
+
+.menus {
+  margin-top: 2em;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  border-top: 1px solid rgb(8, 8, 97);
+  border-bottom: 4px double rgb(8, 8, 97);
+}
+
+.menus button {
   border: none;
   background: none;
   margin: 5px;
+  font-weight: 550;
+  color: #444444;
 }
 
-.menu-area button:hover {
-  background-color: rgb(221, 221, 221);
-  border-radius: 4px;
+.menus button:hover {
+  background-color: rgb(197, 197, 197);
+  border-radius: 6px;
 }
+/* 뉴스 보드 */
+.news {
+  border-bottom: 2px solid rgb(8, 8, 97);
+  padding: 2em 0;
+}
+
 .news-img-size {
   max-width: 100%;
-  max-height: 450px;
-}
-.news {
-  border-bottom: 2px solid rgb(84, 84, 163);
-}
-.top-menu {
-  display: flex;
-}
-.side-bar {
-  display: none;
-  border: none;
-  background: none;
-  color: rgb(84, 84, 163);
-  font-size: 30px;
+  max-height: 250px;
 }
 
-.searchTool {
-  color: rgb(84, 84, 163);
-  font-size: 27px;
-  background: none;
-  border: none;
-  position: absolute;
-  right: 20px;
-}
-.userSearch {
-  display: none;
-  padding: 0;
-  position: absolute;
-  right: 60px;
-  top: 5px;
-  width: 100px;
-}
-
-.side-menu {
-  display: none;
-  box-sizing: border-box;
-  width: 30%;
-  border: 2px solid rgb(200, 239, 255);
-  background-color: rgb(200, 239, 255);
-}
+/* 사이드 바*/
 
 @media screen and (max-width: 768px) {
-  .menu-area {
-    display: none;
-    flex-direction: column;
-  }
-  .side-menu {
-    display: none;
-    flex-direction: column;
-    justify-content: space-around;
-  }
-  .side-menu button {
-    width: 100%;
-    text-align: center;
-    border: none;
-    background: none;
-
-    padding: 4px 10px;
-    justify-content: space-around;
-  }
-  .side-menu button:hover {
-    background-color: rgb(238, 238, 238);
-    border: 1px solid rgb(238, 238, 238);
-
-    border-radius: 4px;
-  }
-  .side-bar {
+  menu {
     display: block;
   }
-  .side-menu.active {
-    display: flex;
-    position: absolute;
-    box-sizing: border-box;
-    width: 40%;
-    height: 500px;
-    padding: 0;
-  }
-  .searchTool {
-    color: rgb(84, 84, 163);
-    font-size: 27px;
-    background: none;
+
+  .menus {
+    position: fixed;
+    margin: 0;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    background-color: #e7e7e7;
+    width: 80vw;
+    padding: 20px;
     border: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    z-index: 10000;
+    transition: 0.5s;
+  }
+
+  .menus button {
+    display: block;
+    color: #777;
+    transition: 0.35s;
+  }
+
+  .menus button:hover {
+    background-color: white;
+  }
+  .menus .fa-x {
+    display: block;
     position: absolute;
+    top: 10px;
     right: 10px;
+    cursor: pointer;
+    color: #fff;
+  }
+  .head-line {
+    border-bottom: 5px double #444;
+    padding-bottom: 10px;
+  }
+  .col-lg-4 {
+    margin-bottom: 1.5em;
   }
 }
